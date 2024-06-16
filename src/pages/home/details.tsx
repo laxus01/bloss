@@ -13,7 +13,6 @@ interface Item {
 
 export const Details = () => {
   const [items, setItems] = useState<Item[]>([]);
-  const [listComments, setListComments] = useState();
   const location = useLocation();
   const characterDetail = location.state || { characterDetail: {} };
   console.log(characterDetail);
