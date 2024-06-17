@@ -77,7 +77,7 @@ export const Details = () => {
         <Divider />
         <div className="mt-5">
           <div>
-            <label className="text-md font-[600]">Coment</label>
+            <label className="text-md font-[600]">Add coment</label>
           </div>
           <div>
             <Comments saveComment={saveComment} />
@@ -86,7 +86,7 @@ export const Details = () => {
       </div>
       <div className="mt-10">
           <div>
-            <label className="text-md font-[600]">List Comments</label>
+            <label className="text-md font-[600]">Comments ({items.length})</label>
           </div>
         {items.map((i: Item) => (
           <>

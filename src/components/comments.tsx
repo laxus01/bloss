@@ -16,11 +16,20 @@ const style = {
   p: 4,
 };
 
-export const Comments = ({saveComment}: any) => {
+export const Comments = ({ saveComment }: any) => {
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const [text, setText] = useState("");
+  const customTextArea = {
+    width: "100%",
+    height: "150px",
+    padding: "10px",
+    borderRadius: "5px",
+    borderColor: "#ccc",
+    fontSize: "16px",
+    boxShadow: "0px 0px 5px rgba(0, 0, 0, 0.1)",
+  }
 
   const handleChange = (event: any) => {
     setText(event.target.value);
@@ -38,19 +47,24 @@ export const Comments = ({saveComment}: any) => {
         aria-describedby="modal-modal-description"
       >
         <Box sx={style}>
-          <div>
-            <h1>Text Saver</h1>
+          <div className="w-full">
             <textarea
               value={text}
               onChange={handleChange}
-              placeholder="Escribe algo aquí..."
+              placeholder="Comment"
+              style={customTextArea}
             />
-            <Button onClick={() => {
+          </div>
+          <div className="flex justify-center w-full">
+            <Button
+              onClick={() => {
                 saveComment(text);
                 setOpen(false);
-            }
-
-            }> Save </Button>
+                setText("");
+              }}
+            >
+              Save
+            </Button>
           </div>
         </Box>
       </Modal>
