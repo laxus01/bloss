@@ -15,7 +15,6 @@ export const Details = () => {
   const [items, setItems] = useState<Item[]>([]);
   const location = useLocation();
   const characterDetail = location.state || { characterDetail: {} };
-  console.log(characterDetail);
 
   const saveComment = (text: string) => {
     const newItem = {
